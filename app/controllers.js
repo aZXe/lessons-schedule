@@ -1,23 +1,21 @@
 'use strict';
 
-//function ListLessonsCtrl($scope) {
-angular.module('schedule', [])
-.controller('ListLessonsCtrl', function($scope) {
-	$scope.schedule = [
+function ListLessonsCtrl($scope) {
+	$scope.timetables = [
 		{
-			day: {date: '12.01.2015', dow: 'понедельник'},
+			day: {date: '12.01.2015', dow: 'РїРѕРЅРµРґРµР»СЊРЅРёРє'},
 			lessons: [
-				{time: '9.45 – 12.35', title: 'ФАН', teacher: 'Чесалин В.И.', room: '351'},          
-				{time: '16.00 – 18.50', title: 'С/К (инф)', teacher: 'Блинов И.Н.', room: '419'}          
+				{time: '9.45 вЂ“ 12.35', title: 'Р¤РђРќ', teacher: 'Р§РµСЃР°Р»РёРЅ Р’.Р.', room: '351'},          
+				{time: '16.00 вЂ“ 18.50', title: 'РЎ/Рљ (РёРЅС„)', teacher: 'Р‘Р»РёРЅРѕРІ Р.Рќ.', room: '419'}          
 			]
 		},
 		{
-			day: {date: '13.01.2015', dow: 'вторник'},
+			day: {date: '13.01.2015', dow: 'РІС‚РѕСЂРЅРёРє'},
 			lessons: [
-				{time: '9.45 – 12.35', title: 'ФАН', teacher: 'Чесалин В.И.', room: '351'},          
-				{time: '13.00 - 15.50', title: 'Основы предпр. деятельности', teacher: 'Пытко Д.О.', room: '351'},          
-				{time: '16.00 – 18.50', title: 'С/К (инф)', teacher: 'Блинов И.Н.', room: '433'}          
+				{time: '9.45 вЂ“ 12.35', title: 'Р¤РђРќ', teacher: 'Р§РµСЃР°Р»РёРЅ Р’.Р.', room: '351'},          
+				{time: '13.00 - 15.50', title: 'РћСЃРЅРѕРІС‹ РїСЂРµРґРїСЂ. РґРµСЏС‚РµР»СЊРЅРѕСЃС‚Рё', teacher: 'РџС‹С‚РєРѕ Р”.Рћ.', room: '351'},          
+				{time: '16.00 вЂ“ 18.50', title: 'РЎ/Рљ (РёРЅС„)', teacher: 'Р‘Р»РёРЅРѕРІ Р.Рќ.', room: '433'}          
 			]
 		}
 	];
-});
+}

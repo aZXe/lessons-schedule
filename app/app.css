@@ -29,7 +29,21 @@
   padding: 0;
 }
  */
+ html, body {
+ 	height: 100%;
+}
  
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.full {
+	width: 100%;
+	height: 100%;
+}
+
 table, tr, td {
 	border: 1px solid black;
 }

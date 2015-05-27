@@ -1,32 +1,22 @@
   <div>
-  	<h1 style="text-align: center;">–¿—œ»—¿Õ»≈</h1>
-  	<h2 style="text-align: center;">«¿Õﬂ“»… ƒÀﬂ —“”ƒ≈Õ“Œ¬ 3  ”–—¿ «¿Œ◊ÕŒ≈ Œ“ƒ≈À≈Õ»≈</h2>
-  	<h3 style="text-align: center;">2014-2015 Û˜.„Ó‰</h3>
+  	<h1 style="text-align: center;">–†–ê–°–ü–ò–°–ê–ù–ò–ï</h1>
+  	<h2 style="text-align: center;">–ó–ê–ù–Ø–¢–ò–ô –î–õ–Ø –°–¢–£–î–ï–ù–¢–û–í 3 –ö–£–†–°–ê –ó–ê–û–ß–ù–û–ï –û–¢–î–ï–õ–ï–ù–ò–ï</h2>
+  	<h3 style="text-align: center;">2014-2015 —É—á.–≥–æ–¥</h3>
   </div>
   
-  <div class="container-fluid" ng-controller="ListLessonsCtrl">
+  <div class="container-fluid">
   	<table style="width: 100%;">
-		<tr>
-			<td rowspan="3" style="vertical-align: top; text-align: left;">
-				{{'date'}}<br />
-				{{'day'}}
-			</td>
-			<td>{{'time'}}</td>
-			<td>{{'title'}}</td>
-			<td>{{'teacher'}}</td>
-			<td>{{'room'}}</td>
-		</tr>
-		<tr>
-			<td>{{'time'}}</td>
-			<td>{{'title'}}</td>
-			<td>{{'teacher'}}</td>
-			<td>{{'room'}}</td>
-		</tr>
-		<tr>
-			<td>{{'time'}}</td>
-			<td>{{'title'}}</td>
-			<td>{{'teacher'}}</td>
-			<td>{{'room'}}</td>
-		</tr>
+  		<tbody ng-repeat="timetable in timetables">
+			<tr ng-repeat="lesson in timetable.lessons">
+				<td rowspan="{{timetable.lessons.length}}" ng-if="!$index" style="vertical-align: top; text-align: left;">
+					{{timetable.day.date}}<br />
+					{{timetable.day.dow}}
+				</td>
+				<td>{{lesson.time}}</td>
+				<td>{{lesson.title}}</td>
+				<td>{{lesson.teacher}}</td>
+				<td>{{lesson.room}}</td>
+			</tr>
+		</tbody>		
   	</table>
   </div>
