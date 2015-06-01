@@ -2,10 +2,19 @@
 
 describe('Lessons Schedule Controllers', function() {
 	
+	beforeEach(function() {
+		this.addMatchers({
+			toEqualData: function(expected) {
+				return angular.equals(this.actual, expected);
+			}
+		});
+	});
+	
+	beforeEach(module('schedule'));
+	beforeEach(module('schedule.services'));
+	
 	describe('ListLessonsCtrl', function() {
 		var scope, ctrl, $httpBackend;
-		
-		beforeEach(module('schedule'));
 		
 		beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
 			$httpBackend = _$httpBackend_;
@@ -13,14 +22,14 @@ describe('Lessons Schedule Controllers', function() {
 				.respond([{day: "one"}, {day: "two"}]);
 			
 			scope = $rootScope.$new();
-			ctrl = $controller(ListLessonsCtrl, {$scope: scope});
+			ctrl = $controller('ListLessonsCtrl', {$scope: scope});
 		}));
 		
 		it('should create "timetables" model with 2 days schedule fetched from xhr', function() {
-			expect(scope.timetables).toBeUndefined();
+			expect(scope.timetables).toEqualData([]);
 			$httpBackend.flush();
 			
-			expect(scope.timetables).toEqual([{day: "one"}, {day: "two"}]);
+			expect(scope.timetables).toEqualData([{day: "one"}, {day: "two"}]);
 		});
 	});
 	

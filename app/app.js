@@ -3,8 +3,8 @@
 // Declare app level module which depends on views, and components
 angular.module('schedule', [
   'ngRoute',
-  'schedule.controllers'
-//  'schedule.services'
+  'schedule.controllers',
+  'schedule.services'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider
